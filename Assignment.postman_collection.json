@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "914cbca6-120d-476b-afd8-893aa1c47a48",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"user\",\n    \"email\": \"user@test.com\",\n    \"first_name\": \"user\",\n    \"last_name\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"new\",\n    \"category\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/passwords/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"passwords",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/passwords/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"passwords",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"edited\",\n    \"category\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/passwords/6/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"passwords",
+						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/passwords/6/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"passwords",
+						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Share Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"shared_with_uid\": 8,\n    \"password\": 4,\n    \"view_perm\": true,\n    \"edit_perm\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/share-password",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"share-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passowords Shared with me",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test6",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/shared-password-me",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shared-password-me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Shared Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test6",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/shared-password-me/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shared-password-me",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Shared Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test6",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"shared_with_uid\": 8,\n    \"password\": 5,\n    \"view_perm\": true,\n    \"edit_perm\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/shared-password-me/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"shared-password-me",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
